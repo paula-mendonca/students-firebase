@@ -46,8 +46,13 @@ public class MainActivity extends AppCompatActivity {
         listStudent.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                DatabaseReference item = listAdapter.getRef(position);
-                item.removeValue();
+                if (mAuth.getCurrentUser() == null) {
+                    Intent it = new Intent(getBaseContext(), UserAuth.class);
+                    startActivity(it);
+                } else {
+                    DatabaseReference item = listAdapter.getRef(position);
+                    item.removeValue();
+                }
                 return false;
             }
         });

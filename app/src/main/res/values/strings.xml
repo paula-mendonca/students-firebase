@@ -10,4 +10,5 @@
     <string name="password">Password</string>
     <string name="clear">CLEAR</string>
     <string name="login">Login</string>
+    <string name="create">Create</string>
 </resources>

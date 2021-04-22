@@ -13,7 +13,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class UserAuth extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -31,7 +30,7 @@ public class UserAuth extends AppCompatActivity {
     }
 
     public void logIn (View v) {
-        authenticateUser(txtUser.getText().toString(), txtPass.getText().toString());
+        authenticateUser(txtUser.getText().toString(), txtPass.getText().toString()).;
     }
 
     public void signIn (View v){
