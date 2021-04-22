@@ -2,7 +2,9 @@ package com.paulamendonca.studentsfirebase;
 
 import androidx.annotation.NonNull;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private String name;
     private String course;
     private String email;
@@ -22,4 +24,5 @@ public class Student {
     @NonNull
     @Override
     public String toString() { return name + " " + course + " " + email; }
+
 }
