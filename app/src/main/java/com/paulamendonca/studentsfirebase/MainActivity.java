@@ -3,9 +3,13 @@
 package com.paulamendonca.studentsfirebase;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -39,7 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void populateView(View v, Student model, int position) {
                 TextView txtStudentName = v.findViewById(R.id.txtStudentName);
+                ImageView imageItem = v.findViewById(R.id.imageItem);
+
                 txtStudentName.setText(model.getName());
+                if (model.getImage() != null) {
+                    byte imageData[] = Base64.decode(model.getImage(), Base64.DEFAULT);
+                    Bitmap img = BitmapFactory.decodeByteArray(imageData,0, imageData.length);
+                    imageItem.setImageBitmap(img);
+                }
             }
         };
         listStudent.setAdapter(listAdapter);

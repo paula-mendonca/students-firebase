@@ -8,6 +8,7 @@ public class Student implements Serializable {
     private String name;
     private String course;
     private String email;
+    private String image;
 
     public Student () {}
 
@@ -25,4 +26,10 @@ public class Student implements Serializable {
     @Override
     public String toString() { return name + " " + course + " " + email; }
 
+    public String getImage () {
+        return this.image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
