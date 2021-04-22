@@ -30,7 +30,7 @@ public class UserAuth extends AppCompatActivity {
     }
 
     public void logIn (View v) {
-        authenticateUser(txtUser.getText().toString(), txtPass.getText().toString()).;
+        authenticateUser(txtUser.getText().toString(), txtPass.getText().toString());
     }
 
     public void signIn (View v){
