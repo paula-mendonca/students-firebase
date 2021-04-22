@@ -7,4 +7,7 @@
     <string name="add">ADD</string>
     <string name="edit">EDIT</string>
     <string name="add_student">ADD STUDENT</string>
+    <string name="password">Password</string>
+    <string name="clear">CLEAR</string>
+    <string name="login">Login</string>
 </resources>

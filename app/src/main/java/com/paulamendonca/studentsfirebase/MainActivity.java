@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,11 +25,15 @@ public class MainActivity extends AppCompatActivity {
     FirebaseListAdapter<Student> listAdapter;
     ListView listStudent;
 
+    FirebaseAuth mAuth;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
         listStudent = findViewById(R.id.listStudent);
         listAdapter = new FirebaseListAdapter<Student>(this, Student.class, R.layout.student_list_item, students) {
             @Override
